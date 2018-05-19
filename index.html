@@ -50,11 +50,16 @@
         crossorigin="anonymous"></script>
 <script>
     window.onload = function () {
-        getLocation();
-        changeScale();
+        preLoader();
     };
     const app = document.getElementById('app');
-    const toggle = document.getElementById('toggle');
+
+
+    function preLoader(){
+        app.innerHTML = `<h1 class="text-white text-center">freeCodeCamp Weather App</h1><br><p class="text-white text-center">Geolocation In Progress</p>`;
+        getLocation();
+
+    }
 
     let units = '&deg;C';
     let btnText = 'Show &deg; F';
